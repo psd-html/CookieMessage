@@ -5,7 +5,7 @@ La loi impose désormais aux responsables de sites et aux fournisseurs de soluti
 
 Utlisation du script: CookieCuttr
 
-adaptation pour PluXml
+Adaptation pour PluXml
 
 
-N'hésitez pas à me contacter sur http://psd-html.fr
+
