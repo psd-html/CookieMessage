@@ -24,7 +24,6 @@ class CookieMessage extends plxPlugin {
 
         <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="<?php echo PLX_PLUGINS ?>CookieMessage/app/cookie.js"></script>
-        <script src="<?php echo PLX_PLUGINS ?>CookieMessage/app/jquery.cookiecuttr.js"></script>
         <script>
 
             $(document).ready(function () {
