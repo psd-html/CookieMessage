@@ -5,7 +5,7 @@ La loi impose désormais aux responsables de sites et aux fournisseurs de soluti
 
 Utlisation du script: CookieCuttr, visible à cette adresse: https://github.com/weare2ndfloor/cookieCuttr
 
-Adaptation pour PluXml
+Adaptation pour PluXml, visible ici: http://nextum.fr
 
 
 
