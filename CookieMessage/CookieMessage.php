@@ -55,20 +55,16 @@ class CookieMessage extends plxPlugin {
                 });
             });      
 
-            if (jQuery.cookie('cc_cookie_decline') == "cc_cookie_decline") {
+             if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
 
-                 // refuser les cookie
+               // placer votre code google analytics
 
-            } else {
-
-                // votre code Google Analytics
-            
-            }
+            } 
 
         </script>
 
         <?php
     }
       
-} // class Tweetie
+} // class CookieMessage
 ?>
