@@ -64,24 +64,28 @@ if(!empty($_POST)) {
 		<input id="cookieDeclineButtonText" name="cookieDeclineButtonText"  maxlength="255" value="<?php echo $plxPlugin->getParam("cookieDeclineButtonText"); ?>">
 	</p>
 
-	<p><h3>Configuration des messages</h3></p>
+	<p>
+		<h3>Configuration des messages</h3>
+	</p>
 
 	<p>
-        <label for="message">Message à afficher:</label>
-        <textarea rows="8"   name="message" value=""><? echo $plxPlugin->getParam('message'); ?></textarea>
-    </p>
-
-    <p>
-        <label for="info">Texte du lien plus d'info:</label>
-        <input id="info" name="info"  maxlength="255" value="<?php echo $plxPlugin->getParam('info'); ?>">
-    </p>
-
-    <p>
+	        <label for="message">Message à afficher:</label>
+	        <textarea rows="8"   name="message" value=""><? echo $plxPlugin->getParam('message'); ?></textarea>
+	</p>
+	
+	<p>
+	      	<label for="info">Texte du lien plus d'info:</label>
+	        <input id="info" name="info"  maxlength="255" value="<?php echo $plxPlugin->getParam('info'); ?>">
+	</p>
+	
+	<p>
 		<label for="info_lien">Lien plus d'info:</label>
 		<input id="info_lien" name="info_lien"  maxlength="255" value="<?php echo $plxPlugin->getParam('info_lien'); ?>">
 	</p>
 
-	<p><h3>Styliser l'affichage</h3></p>
+	<p>
+		<h3>Styliser l'affichage</h3>
+	</p>
 
 	<p>
 		<label for="full">Afficher le message sur la page entière?</label>
@@ -99,7 +103,9 @@ if(!empty($_POST)) {
 		</select>
 	</p>
 
-	<p><h3>Paramètres</h3></p>
+	<p>
+		<h3>Paramètres</h3>
+	</p>
 
 	<p>
 		<label for="time">Durée (en jours) pour conserver le cookie:</label>
@@ -109,9 +115,10 @@ if(!empty($_POST)) {
 
 			
 	<p class="in-action-bar">
-			<?php echo plxToken::getTokenPostMethod() ?>
-			<input type="submit" name="submit" value="Valider" />
+		<?php echo plxToken::getTokenPostMethod() ?>
+		<input type="submit" name="submit" value="Valider" />
 	</p>
+	
 	</fieldset>	
 
 </form>
