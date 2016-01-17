@@ -70,17 +70,17 @@ if(!empty($_POST)) {
 
 	<p>
 	        <label for="message">Message à afficher:</label>
-	        <textarea rows="8"   name="message" value=""><? echo $plxPlugin->getParam('message'); ?></textarea>
+	        <textarea rows="8"   name="message" value=""><?= $plxPlugin->getParam('message'); ?></textarea>
 	</p>
 	
 	<p>
 	      	<label for="info">Texte du lien plus d'info:</label>
-	        <input id="info" name="info"  maxlength="255" value="<?php echo $plxPlugin->getParam('info'); ?>">
+	        <input id="info" name="info"  maxlength="255" value="<?= $plxPlugin->getParam('info'); ?>">
 	</p>
 	
 	<p>
 		<label for="info_lien">Lien plus d'info:</label>
-		<input id="info_lien" name="info_lien"  maxlength="255" value="<?php echo $plxPlugin->getParam('info_lien'); ?>">
+		<input id="info_lien" name="info_lien"  maxlength="255" value="<?= $plxPlugin->getParam('info_lien'); ?>">
 	</p>
 
 	<p>
@@ -109,7 +109,7 @@ if(!empty($_POST)) {
 
 	<p>
 		<label for="time">Durée (en jours) pour conserver le cookie:</label>
-		<input id="time" name="time"  maxlength="255" value="<?php echo $plxPlugin->getParam('time'); ?>">
+		<input id="time" name="time"  maxlength="255" value="<?= $plxPlugin->getParam('time'); ?>">
 	</p>
 
 
