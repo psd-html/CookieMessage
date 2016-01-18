@@ -28,7 +28,7 @@ class CookieMessage extends plxPlugin {
 
             $(document).ready(function () {
                 // activate cookie cutter
-                $.cookieCuttr(){
+                $.cookieCuttr();
 
                     cookieNoMessage: false, // desactiver le message et les cookie
 
