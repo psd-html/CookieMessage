@@ -19,10 +19,15 @@ class CookieMessage extends plxPlugin {
         <?php
     }
 
-    public function ThemeEndBody(){ ?>
+    public function ThemeEndBody(){ 
 
+     $plxShow = plxShow::getInstance(); 
 
-        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+     $script = $this->getParam('script');
+
+     if ($script == 'true') { echo'<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>';}?>
+
+        
         <script src="<?php echo PLX_PLUGINS ?>CookieMessage/app/cookie.js"></script>
         <script>
 
@@ -43,7 +48,7 @@ class CookieMessage extends plxPlugin {
                     // le message et les liens
                     cookieCutterDeclineOnly: true, // you'd like the CookieCutter to only hide when someone has clicked declined set this to true
                     cookieMessage: "<?php echo $this->getParam('message');?> <a href='{{cookiePolicyLink}}' title='read about our cookies'><?php echo $this->getParam('info');?></a>",
-                    cookiePolicyLink: '<?php echo $this->getParam("info_lien");?>', // if applicable, enter the link to your privacy policy here...
+                    cookiePolicyLink: '<?php echo "static".$this->getParam("info_lien");?>', // if applicable, enter the link to your privacy policy here...
 
                     cookieOverlayEnabled: <?php echo $this->getParam('full');?>, // true, afficher le message sur la page
                     
