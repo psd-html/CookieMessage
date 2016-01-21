@@ -30,18 +30,6 @@ if(!empty($_POST)) {
 	$decline =  $plxPlugin->getParam('cookieDeclineButton');
 	$page    =  $plxPlugin->getParam('full');
 	$position = $plxPlugin->getParam('page');
-	
-	# création de la liste des pages cibles si liste vide
-	$aCibles = array();
-	if($plxAdmin->aStats) { // Si on a des pages statiques
-		$listStat = array();
-		foreach($plxAdmin->aStats as $k=>$v) { # Pour chaque page statique
-			if($v["readable"]=1){
-				$listStat[intval($k)] = $v["name"];
-			}
-		}
-		$aCibles = $listStat;
-	}
 
 ?>
 
@@ -92,7 +80,7 @@ if(!empty($_POST)) {
 	
 	<p>
 		<label for="info_lien">Lien plus d'info:</label>
-		<input id="info_lien" name="info_lien"  maxlength="255" value="<?php echo $plxPlugin->getParam('info_lien'); ?>">
+		<input id="info_lien" name="info_lien"  maxlength="255" value="<?= $plxPlugin->getParam('info_lien'); ?>">
 	</p>
 
 	<p>
