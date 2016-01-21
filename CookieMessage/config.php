@@ -13,6 +13,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('full', $_POST['full'], 'cdata');
 	$plxPlugin->setParam('time', $_POST['time'], 'cdata');
 	$plxPlugin->setParam('page', $_POST['page'], 'cdata');
+	$plxPlugin->setParam('script', $_POST['script'], 'cdata');
 	$plxPlugin->saveParams();
 	header('Location: parametres_plugin.php?p=CookieMessage');
 	exit;
@@ -30,6 +31,19 @@ if(!empty($_POST)) {
 	$decline =  $plxPlugin->getParam('cookieDeclineButton');
 	$page    =  $plxPlugin->getParam('full');
 	$position = $plxPlugin->getParam('page');
+	$script = $plxPlugin->getParam('script');
+
+	# création de la liste des pages cibles si liste vide
+	$aCibles = array();
+	if($plxAdmin->aStats) { // Si on a des pages statiques
+		$listStat = array();
+		foreach($plxAdmin->aStats as $k=>$v) { # Pour chaque page statique
+			if($v["readable"]=1){
+				$listStat[intval($k)] = $v["name"];
+			}
+		}
+		$aCibles = $listStat;
+	}
 
 ?>
 
@@ -79,8 +93,8 @@ if(!empty($_POST)) {
 	</p>
 	
 	<p>
-		<label for="info_lien">Lien plus d'info:</label>
-		<input id="info_lien" name="info_lien"  maxlength="255" value="<?= $plxPlugin->getParam('info_lien'); ?>">
+		<label for="id_info_lien">Page à afficher pour plus d'info:</label>
+		<?php plxUtils::printSelect('info_lien', $aCibles, $plxPlugin->getParam('info_lien')); ?>
 	</p>
 
 	<p>
@@ -110,6 +124,14 @@ if(!empty($_POST)) {
 	<p>
 		<label for="time">Durée (en jours) pour conserver le cookie:</label>
 		<input id="time" name="time"  maxlength="255" value="<?= $plxPlugin->getParam('time'); ?>">
+	</p>
+
+	<p>
+		<label for="script">Activer jQuery 2.1.3 ?</label>
+		<select name="script" id="script">
+		   <option value="true" <?php if ($script == 'true') { echo'selected';}?>>Oui</option>
+		   <option value="false" <?php if ($script == 'false') { echo'selected';}?>>Non</option>
+		</select>
 	</p>
 
 
